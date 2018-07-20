@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>套餐选择</title>
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="../lib/html5shiv.min.js"></script>
+    <script src="../lib/html5shiv-printshiv.min.js"></script>
+    <script src="../lib/es5-shim.min.js"></script>
+    <script src="../lib/es5-sham.min.js"></script>
+    <script src="../lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form action="aaa" method="post" id="orderChoose">
+    <input type="hidden" name="token" value="aaaaaaaaa"/>
+    <input type="hidden" id="key" name="后台参数名1" value=""/>
+    <input type="hidden" id="orderData" name="后台参数名2" value='{
+  "packageExist":1,
+  "totalMoney": "--",
+  "feeTypes": {
+    "v": 2,
+    "a": [
+      {
+        "t": "套餐包",
+        "v": 1
+      },
+      {
+        "t": "阶梯计费",
+        "v": 2
+      },
+      {
+        "t": "按量计费",
+        "v": 3
+      }
+    ]
+  },
+  "list": [
+    {
+      "check": 0,
+      "eaPriceId": "7227442942466",
+      "isFeeType":1,
+      "feeType": [1],
+      "btnType": 0,
+      "eaPriceName": "邹栋套餐名称",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":["语音通知计费点"],
+      "feeMode":["按时长（60秒计费）"],
+      "amount": ["10000分钟"],
+      "price": [{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      }],
+      "packageAmount": [{
+        "type": 1,
+        "num": 0
+      }]
+    },
+    {
+      "check": 0,
+      "eaPriceId": "8265232994535",
+      "isFeeType":1,
+      "feeType": [1,1,1],
+      "btnType": 0,
+      "eaPriceName": "邹栋套餐名称1",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":["通话无录音计费","通话有录音计费","绑定未呼通"],
+      "feeMode":["按时长（60秒计费）","按时长（60秒计费）","按次"],
+      "amount": ["500分钟","500分钟","500分钟"],
+      "price": [{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      }],
+      "packageAmount": [{
+        "type": 1,
+        "num": 0
+      },{
+        "type": 1,
+        "num": 0
+      },{
+        "type": 1,
+        "num": 0
+      }]
+    },
+    {
+      "check": 0,
+      "eaPriceId": "5565246481514",
+      "isFeeType":2,
+      "feeType": [2],
+      "btnType": 1,
+      "eaPriceName": "王发套餐名称",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":[],
+      "feeMode":["按时长（60秒计费）"],
+      "amount": ["0~500条","501~1500条","1501~3000条","3000~99999999条"],
+      "price": [{
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.5,
+        "text": "0.5/条"
+      },{
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.48,
+        "text": "0.48/条"
+      },{
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.45,
+        "text": "0.45/条"
+      },{
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.40,
+        "text": "0.40/条"
+      }],
+      "packageAmount": [{
+        "type": -1,
+        "num": ""
+      }]
+    },
+    {
+      "check": 0,
+      "eaPriceId": "8265232994533",
+      "isFeeType":3,
+      "feeType": [3,3,3],
+      "btnType": 1,
+      "eaPriceName": "邹栋套餐名称2",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":["通话无录音计费","通话有录音计费","绑定未呼通"],
+      "feeMode":["按时长（60秒计费）","按时长（60秒计费）","按次"],
+      "amount": ["500分钟","500分钟","500分钟"],
+      "price": [{
+        "type": 1,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 1,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 1,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      }],
+      "packageAmount": [{
+        "type": -1,
+        "num": ""
+      },{
+        "type": -1,
+        "num": ""
+      },{
+        "type": -1,
+        "num": ""
+      }]
+    },
+    {
+      "check": 0,
+      "eaPriceId": "7227442942462",
+      "isFeeType":1,
+      "feeType": [1],
+      "btnType": 0,
+      "eaPriceName": "邹栋套餐名称3",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":["语音通知计费点"],
+      "feeMode":["按时长（60秒计费）"],
+      "amount": ["10000分钟"],
+      "price": [{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      }],
+      "packageAmount": [{
+        "type": 1,
+        "num": 0
+      }]
+    },
+    {
+      "check": 0,
+      "eaPriceId": "8265232994531",
+      "isFeeType":3,
+      "feeType": [3,1,1],
+      "btnType": 1,
+      "eaPriceName": "邹栋套餐名称4",
+      "validTime":"2018-02-08 00：18：20",
+      "pointTypeName":["通话无录音计费","通话有录音计费","绑定未呼通"],
+      "feeMode":["按时长（60秒计费）","按时长（60秒计费）","按次"],
+      "amount": ["500分钟","500分钟","500分钟"],
+      "price": [{
+        "type": 1,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      },{
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": "100元"
+      }],
+      "packageAmount": [{
+        "type": -1,
+        "num": ""
+      },{
+        "type": 1,
+        "num": 0
+      },{
+        "type": 1,
+        "num": 0
+      }]
+    }
+  ],
+  "agreementShow":1
+}'>
+</form>
+<div id="app"></div>
+<div id = "dataBox">
+  <div id="submitType"></div>
+  <span class="tongy">我同意并遵守</span>
+  <span class="observeContent urlBtn" page-url="devDoc.html?Protocol_1">《江苏移动通信能力产品分销管理平台短信能力服务条款》</span>
+</div>
+<div id="submit" class="submit">下一步</div>
+</body>
+<script src="../dist/manifest.js"></script>
+<script src="../dist/vendors.js"></script>
+<script src="../dist/componentUI.js"></script>
+<script src="../dist/orderChooseListZj.js"></script>
+</html>

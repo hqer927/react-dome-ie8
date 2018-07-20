@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>test Dome</title>
+    <link rel="icon" href="img/cmcc.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/cmcc.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+<!--    <link href="css/sprite.css" rel="stylesheet"/>-->
+<!--    <link href="css/app.css" rel="stylesheet"/>-->
+<!--    <script src="lib/Barrett.js"></script>
+    <script src="lib/BigInt.js"></script>
+    <script src="lib/RSA_Stripped.js"></script>-->
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="lib/html5shiv.min.js"></script>
+    <script src="lib/html5shiv-printshiv.min.js"></script>
+    <script src="lib/es5-shim.min.js"></script>
+    <script src="lib/es5-sham.min.js"></script>
+    <script src="lib/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        window.GLOBAL = {
+            pageData:{
+                systemError:{
+                    "2000":{text:"数据请求异常，请稍后重试",key:"center"}
+                },
+                header:{
+                    logo:{
+                        img:"img/heLiYun.png",
+                        text:""
+                    },
+                    centerMenu:{
+                        devDoc:{
+                            text:"开发者文档",
+                            child:[
+                                {text:"开发者指南",key:"companion",url:"/companion"},
+                                {text:"REST API",key:"restAPI",url:"/restAPI?d="+encodeURIComponent("html/00001.html")},
+                                {text:"服务协议",key:"agreement",url:"/agreement"},
+                                {text:"常见问题",key:"FQA",url:"/FQA"}
+                            ]
+                        },
+                        ability:{
+                            text:"能力服务",
+                            child:[
+                                {
+                                    text:"短信服务",
+                                    child:[
+                                        {text:"短信模板",key:"smsTemplateDome",url:"/introduction/00001"},
+                                        {text:"短信验证码",key:"verificationCodeDome",url:"/introduction/00002"}
+                                    ]
+                                },
+                                {
+                                    text:"语音通信",
+                                    child:[
+                                        {text:"语音通知",key:"phoneSoundDome",url:"/introduction/00003"},
+                                        {text:"双向语音",key:"voiceNotificationDome",url:"/introduction/00004"},
+                                        {text:"语音验证码",key:"verificationCodeDome",url:"/introduction/00005"},
+                                        {text:"多方语音会议",key:"manyVoiceConferenceDome",url:"/introduction/00006"}
+                                    ]
+                                },
+                                {
+                                    text:"流量服务",
+                                    child:[
+                                        {text:"流量充值",key:"flowDome",url:"/introduction/00007"},
+                                        {text:"QOS",key:"qosDome",url:"/introduction/00008"}
+                                    ]
+                                }
+                            ]
+                        },
+                        workBench:{
+                            text:"我的工作台",
+                            url:"/workBench"
+                        },
+                        index:{
+                            text:"首页",
+                            url:"/index"
+                        },
+                        loginNav:["index","workBench","ability","devDoc"],
+                        unLoginNav:["index","ability","devDoc"]
+                    },
+                    rightMenu:{
+                        userName:{
+                            beforeTips:'欢迎您，',
+                            action:"http://172.18.34.166:8415/mock/dataApi/logout"
+                        },
+                        email:{
+                            url:"/workBench/emailList",
+                            action:"http://172.18.34.166:8415/mock/dataApi/getUnReadMail"
+                        },
+                        unLoginBtns:[
+                            {
+                                text:"登录",
+                                key:"btn btn-primary",
+                                url:"/login"
+                            },
+                            {
+                                text:"注册",
+                                key:"btn btn-info",
+                                url:"/registration"
+                            }
+                        ]
+                    },
+                    action:"http://172.18.34.166:8415/mock/dataApi/getUserLogInfo"
+                },
+                footer:{
+                    leftItems:[
+                        {text:"公司简介",url:"/about"},
+                        {text:"联系我们",url:"/about"},
+                        {text:"杭研开平签[2015]4号  中国移动通信版权所有 ",url:""}
+                    ],
+                    rightItems:[
+                        {img:"img/ghs.png",text:"苏ICP备 11070397号-48",url:""}
+                    ]
+                },
+                about:{
+                    profile:"中国移动通信集团江苏有限公司（简称中国移动江苏公司）隶属于中国移动通信集团公司，是中国移动有限公司在江苏设立的全资子公司 ，是江苏省内规模最大、效益最好、发展最快的通信运营商。中国移动江苏公司将围绕“移动改变生活”战略愿景，以创新型企业建设为主线，以移动互联网、物联网为方向，紧扣客户需求，转变发展机制，努力提升客户价值，积极服务国民经济与社会信息化，加快可持续发展步伐。",
+                    contact:"公司地址： 南京市虎踞路59号<br/>联系电话： yunheliservice@js.chinamobie.com<br/>客服邮箱： 10086"
+                },
+            },
+            token:"0000001",
+            uploadToken:"1000001",
+            key:"be623b6a0ae1e08a81d73700e7ae31b67b1f77bdb53fcf8bca298b7e79d61ec7f986c6dae3baed0431adffcc916c547279b2d7656d7525ba121e9b26e76f5ca812a2976126e5f835ce2a11cb94251c5a8274dcfc8597fad616e72a366bac64bd6165b0fbea478e8a14ef819f755a8260ea641bcb8134f7f1278dfc9b5cc6d1dd",
+            userId:"",
+            isLogin:0,
+            userInfo:{},
+            timer:{},
+            systemTips:{
+                timeOut:2000
+            }
+        };
+    </script>
+<!--    <link rel="stylesheet" type="text/css" href="css/app.css">-->
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="dist/manifest.js"></script>
+<script src="dist/vendors.js"></script>
+<script src="dist/app.js"></script>
+</html>

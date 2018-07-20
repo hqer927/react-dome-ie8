@@ -1,0 +1,668 @@
+@brand-primary:#4ecb9f;
+@brand-success:#58acf4;
+@brand-warning:#ff9d45;
+@colorBg:#f6f7f7;
+@colorFFF:#FFF;
+@colorCCC:#CCC;
+@color333:#333;
+@color666:#666;
+@color999:#999;
+@colorRed:#ef5350;
+*{margin:0;padding:0;border:0}
+ol,ul {
+  list-style: none;
+  margin: 0;
+}
+a,
+a:hover{
+  text-decoration: none;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.CheckBoxUI{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 0;
+}
+.pageContent{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 60px;
+  min-width: 1024px;
+  background-color: @colorBg;
+  font-size: 14px;
+  &.height{
+    height: 100%;
+  }
+  .tipsBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,.5);
+    .tips{
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      width: 320px;
+      min-height: 180px;
+      margin: -90px 0 0 -160px;
+      background-color: @colorFFF;
+      border-radius: 3px;
+      padding: 0 0 50px 0;
+      box-sizing: border-box;
+      .tipsTitle{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #4ecb9f;
+        border-bottom: 1px solid @colorCCC;
+        box-sizing: border-box;
+      }
+      .tipsContext{
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        padding: 20px 20px;
+        box-sizing: border-box;
+      }
+      &.left .tipsContext{
+        text-align: left;
+      }
+      .tipsBtnArea{
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        .btn{
+          height: 30px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  .middleBox{
+    position: relative;
+    box-sizing: border-box;
+    width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    padding:90px 0 30px 0;
+    .whiteSpace{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      background-color: @colorFFF;
+      .title{
+        line-height: 36px;
+        font-size: 16px;
+        color: @color333;
+        &:before{
+          content: "";
+          background-color: @brand-primary;
+          width: 4px;
+          height: 20px;
+          position: absolute;
+          left: 0;
+          margin-top: 8px;
+        }
+      }
+      .about{
+        color: @color666;
+        word-break: break-all;
+        line-height: 30px;
+        .whiteSpace{
+          height: 100%;
+        }
+      }
+      .workBench{
+        .leftMenuBox{
+          position: fixed;
+          width: 200px;
+          top: 0;
+          box-sizing: border-box;
+          background-color: @colorFFF;
+          padding-top: 90px;
+          height: 100%;
+          .leftMenu{
+            position: relative;
+            padding:0 10px 0 40px;
+            width: 100%;
+            box-sizing: border-box;
+            .menu{
+              .item{
+                position: relative;
+                .linkMenu{
+                  display: none;
+                  .linkItem{
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 1px;
+                    font-size: 12px;
+                    padding-left: 30px;
+                    box-sizing: border-box;
+                    width: 100%;
+                  }
+                }
+                &.selected{
+                  .linkMenu{
+                    display: block;
+                  }
+                }
+                .itemTitle{
+                  height: 30px;
+                  line-height: 30px;
+                  width: 100%;
+                }
+                .itemIcon{
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  height: 30px;
+                  line-height: 30px;
+                }
+              }
+            }
+          }
+        }
+        .mainBox{
+          width: 100%;
+          padding-left: 200px;
+          /*      display: inline-block;
+                vertical-align: top;
+                width: 824px;*/
+        }
+      }
+    }
+
+  }
+  .header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    min-width: 1024px;
+    width: 100%;
+    background-color: @colorFFF;
+    border-bottom: 1px solid @colorCCC;
+    z-index: 1;
+    .headerMenu{
+      width: 1024px;
+      height: 70px;
+      line-height: 70px;
+      margin: 0 auto;
+      text-align: center;
+      color: @color666;
+      .logoBtn{
+        float: left;
+        display: block;
+        height: 70px;
+        line-height: 70px;
+      }
+      .centerMenu{
+        display: inline-block;
+        height: 70px;
+        margin: 0 auto;
+        .navItem{
+          position: relative;
+          height: 70px;
+          line-height: 70px;
+          padding: 0 15px;
+          float: left;
+          &:after{
+            content: "|";
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          &:last-child{
+            &:after{
+              content: "";
+            }
+          }
+          .navTitle{
+            padding: 3px 8px;
+            border-radius: 3px;
+            color: @color666;
+          }
+          .showMenuBox{
+            position: absolute;
+            left: 0;
+            top: 52px;
+            width: 100%;
+            display: none;
+            z-index: 10;
+            &:before{
+              content: "";
+              position: absolute;
+              top: -10px;
+              left: 50%;
+              margin-left: -5px;
+              border-top: 5px solid transparent;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid @colorCCC;
+             }
+            &:after{
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 50%;
+              margin-left: -5px;
+              border-top: 5px solid transparent;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid @colorFFF;
+            }
+            .showMenu{
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              opacity: .8;
+              background-color: @colorFFF;
+              border: 1px solid @colorCCC;
+              box-sizing: border-box;
+              padding: 10px;
+              a{
+                color: @color666;
+                &:hover{
+                  color: @brand-primary;
+                }
+              }
+              .showMenuItem{
+                width: 100%;
+                line-height: 28px;
+                position: relative;
+                font-size: 12px;
+                .showMenuItemTitle{
+                  position: absolute;
+                  left: 0;
+                  line-height: 35px;
+                  height: 100%;
+                  width: 70px;
+                  background-color: @brand-primary;
+                  color: @colorFFF;
+                }
+                .menu{
+                  width: 100%;
+                  background-color: @colorFFF;
+                  padding:5px 20px 5px 70px;
+                  box-sizing: border-box;
+                  line-height: 0;
+                  li{
+                    display: inline-block;
+                    width: 80px;
+                    box-sizing: border-box;
+                    line-height: 22px;
+                    text-align: left;
+                  }
+                }
+              }
+            }
+            &.ability{
+              &:before{
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                margin-left: -5px;
+                border-top: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid @colorCCC;
+              }
+              &:after{
+                content: "";
+                position: absolute;
+                top: -9px;
+                left: 50%;
+                margin-left: -5px;
+                border-top: 5px solid transparent;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid @brand-primary;
+              }
+              .showMenu{
+                width: 262px;
+                padding: 0;
+              }
+            }
+
+          }
+          &:hover{
+            .navTitle{
+              background-color: @brand-primary;
+              color: @colorFFF;
+            }
+            .showMenuBox{
+              display: block;
+            }
+          }
+          &.select{
+            .navTitle{
+              color: @brand-primary;
+            }
+            &:hover{
+              .navTitle{
+                background-color: desaturate(@brand-primary, 10%);
+                color: @colorFFF;
+              }
+            }
+          }
+        }
+      }
+      .rightMenu{
+        float: right;
+        height: 70px;
+        line-height: 70px;
+        .btn + .btn{
+          margin-left: 10px;
+        }
+        .userName{
+          float: left;
+          height: 70px;
+          line-height: 70px;
+          position: relative;
+          .iconTips{
+            position: absolute;
+            left: 50%;
+            top: 52px;
+            margin-left: -35px;
+            width: 70px;
+            border: 1px solid @colorCCC;
+            opacity: .8;
+            background-color: @colorFFF;
+            color: @brand-primary;
+            line-height: 30px;
+            border-radius: 3px;
+            z-index: 10;
+            display: none;
+            cursor: pointer;
+            &:before{
+              content: "";
+              position: absolute;
+              top: -10px;
+              left: 50%;
+              margin-left: -5px;
+              border-top: 5px solid transparent;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid @colorCCC;
+            }
+            &:after{
+              content: "";
+              position: absolute;
+              top: -9px;
+              left: 50%;
+              margin-left: -5px;
+              border-top: 5px solid transparent;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid @colorFFF;
+            }
+          }
+          &:hover{
+            .iconTips{
+              display: block;
+            }
+          }
+        }
+        .emailBox{
+          float: right;
+          height: 70px;
+          line-height: 70px;
+          box-sizing: border-box;
+          padding-left: 10px;
+          .icon{
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -8px;
+            position: relative;
+            &.redDot{
+              &:after{
+                content: "";
+                position: absolute;
+                right: 7px;
+                top: 3px;
+                width: 8px;
+                height: 8px;
+                border-radius: 4px;
+                background-color: @colorRed;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1024px){
+    .header{
+      position: absolute;
+    }
+  }
+  .footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    min-width: 1024px;
+    width: 100%;
+    background-color: #252435;
+    .footerMenu{
+      width: 1024px;
+      height: 60px;
+      line-height: 60px;
+      margin: 0 auto;
+      ul{
+        font-size: 12px;
+        li{
+          position: relative;
+          display: inline-block;
+          box-sizing: border-box;
+          color: @colorCCC;
+          a{
+            color: @colorCCC;
+          }
+          img{
+            margin-right: 5px;
+          }
+        }
+      }
+      .leftItem{
+        float: left;
+        .item{
+          padding: 0 15px;
+          &:after{
+            content: "|";
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          &:last-child{
+            &:after{
+              content: "";
+            }
+          }
+        }
+      }
+      .rightItem{
+        float: right;
+        .item{
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+  .login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background: url(../img/loginBg.png) no-repeat center;
+    background-size: 100% 100%;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 37px;
+      width: 100%;
+      height: 140px;
+      display: block;
+      background: url("../img/loginBottom.png") no-repeat center;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 37px;
+      width: 100%;
+      height: 47px;
+      display: block;
+      background: url("../img/loginBottom1.png") repeat-x center;
+    }
+    .loginInputArea{
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      width: 250px;
+      margin-left: -125px;
+      .title{
+        height: 58px;
+        line-height: 58px;
+        width: 100%;
+        color: @brand-primary;
+        font-size: 24px;
+        text-align: center;
+        position: relative;
+        &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          height: 1px;
+          width: 80px;
+          background-color:@brand-primary;
+        }
+        &:after{
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          height: 1px;
+          width: 80px;
+          background-color:@brand-primary;
+        }
+      }
+      .inputLine{
+        position: relative;
+        width: 100%;
+        margin-bottom: 15px;
+        color: @color666;
+        .inputBtn{
+          padding: 0 15px;
+          width: 100%;
+          height: 40px;
+          border: 1px solid @brand-primary;
+          line-height: 40px;
+          box-sizing: border-box;
+          &.imgCode{
+            width: 158px;
+          }
+          &.smsCode{
+            width: 130px;
+          }
+        }
+        .imgCodeBtn{
+          position: relative;
+          width:80px;
+          height: 40px;
+          *{
+            width: 100%;
+            height: 100%;
+          }
+          .glyphicon{
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 40px;
+            color: @colorFFF;
+            background-color: rgba(0,0,0,.3);
+            display: none;
+            cursor: pointer;
+          }
+          &:hover .glyphicon{
+            display: block;
+          }
+        }
+        .errorTips{
+          position: absolute;
+          left: 255px;
+          line-height: 40px;
+          font-size: 12px;
+          color: @colorRed;
+          width: 350px;
+          height: 100%;
+        }
+        .CheckBoxUI{
+          width: 20px;
+          padding: 0 5px 0 0;
+          line-height: 23px;
+          vertical-align: middle;
+          button{
+            position: relative;
+            width: 15px;
+            height: 15px;
+            box-sizing: border-box;
+            border: 1px solid @colorCCC;
+            border-radius: 2px;
+            background-color: @colorFFF;
+            font-size: 12px;
+            .glyphicon{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              line-height: 15px;
+              color: @brand-primary;
+            }
+          }
+        }
+        .smsCodeBtn{
+          width: 110px;
+          height: 40px;
+          padding: 0;
+          border-radius: 0;
+        }
+      }
+      button.submit{
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+}
+@media only screen and (max-height: 600px){
+  .pageContent{
+    min-height: 600px;
+  }
+}

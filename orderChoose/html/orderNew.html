@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>套餐选择</title>
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="../lib/html5shiv.min.js"></script>
+    <script src="../lib/html5shiv-printshiv.min.js"></script>
+    <script src="../lib/es5-shim.min.js"></script>
+    <script src="../lib/es5-sham.min.js"></script>
+    <script src="../lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form action="aaa" method="post" id="orderChoose">
+    <input type="hidden" name="token" value="aaaaaaaaa"/>
+    <input type="hidden" id="key" name="后台参数名1" value=""/>
+  <input type="hidden" id="city" value="zhejiang"/>
+    <input type="hidden" id="orderData" name="后台参数名2" value='{
+  "packageExist":1,
+  "totalMoney": "--",
+  "totalNum": "--",
+  "feeTypes": {
+    "v": 2,
+    "a": [
+      {
+        "t": "套餐包",
+        "v": 1
+      },
+      {
+        "t": "阶梯计费",
+        "v": 2
+      },
+      {
+        "t": "按量计费",
+        "v": 3
+      }
+    ]
+  },
+  "feeModes": {
+    "v": 3,
+    "a": [
+      {
+        "t": "按分钟",
+        "v": 1
+      },
+      {
+        "t": "按人月",
+        "v": 2
+      },
+      {
+        "t": "按次",
+        "v": 3
+      },
+      {
+        "t": "按兆",
+        "v": 4
+      }
+    ]
+  },
+  "list": [
+    {
+      "check": 0,
+      "eaPriceId": "722744294246",
+      "feeType": 1,
+      "feeMode": 1,
+      "btnType": 0,
+      "eaPriceName": "邹栋套餐名称",
+      "validTime":18,
+      "amount": {
+        "type": 0,
+        "unit": "分钟",
+        "num": 10000,
+        "text": [
+          "10000分钟"
+        ]
+      },
+      "price": {
+        "type": 0,
+        "unit": "元",
+        "num": 100,
+        "text": [
+          "100元"
+        ]
+      },
+      "packageAmount": {
+        "type": 1,
+        "num": 0
+      }
+    },
+    {
+      "check": 0,
+      "eaPriceId": "826523299453",
+      "feeType": 1,
+      "feeMode": 1,
+      "btnType": 0,
+      "eaPriceName": "施政套餐名称",
+      "validTime":18,
+      "amount": {
+        "type": 0,
+        "unit": "分钟",
+        "num": 10,
+        "text": [
+          "10分钟"
+        ]
+      },
+      "price": {
+        "type": 0,
+        "unit": "元",
+        "num": 10,
+        "text": [
+          "10元"
+        ]
+      },
+      "packageAmount": {
+        "type": 1,
+        "num": 0
+      }
+    },
+    {
+      "check": 0,
+      "eaPriceId": "645455115686",
+      "feeType": 3,
+      "feeMode": 2,
+      "btnType": 1,
+      "eaPriceName": "方新雁套餐名称",
+      "validTime":18,
+      "amount": {
+        "type": 1,
+        "unit": "分钟",
+        "num": "",
+        "text": [
+          "按分"
+        ]
+      },
+      "price": {
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.5,
+        "text": [
+          "0.5元/分"
+        ]
+      },
+      "packageAmount": {
+        "type": -1,
+        "num": ""
+      }
+    },
+    {
+      "check": 0,
+      "eaPriceId": "302402143490",
+      "feeType": 3,
+      "feeMode": 2,
+      "btnType": 1,
+      "eaPriceName": "赵飞套餐名称",
+      "validTime":18,
+      "amount": {
+        "type": 1,
+        "unit": "分钟",
+        "num": "",
+        "text": [
+          "按分"
+        ]
+      },
+      "price": {
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.5,
+        "text": [
+          "0.5元/分"
+        ]
+      },
+      "packageAmount": {
+        "type": 0,
+        "num": 1
+      }
+    },
+    {
+      "check": 0,
+      "eaPriceId": "556524648151",
+      "feeType": 2,
+      "feeMode": 3,
+      "btnType": 1,
+      "eaPriceName": "王发套餐名称",
+      "validTime":18,
+      "amount": {
+        "type": 1,
+        "unit": "条",
+        "num": "",
+        "text": [
+          "0~500条",
+          "501~1500条",
+          "1501~3000条",
+          "3000~99999999条"
+        ]
+      },
+      "price": {
+        "type": 1,
+        "unit": "元/分",
+        "num": 0.5,
+        "text": [
+          "0.5/条",
+          "0.48/条",
+          "0.45/条",
+          "0.40/条"
+        ]
+      },
+      "packageAmount": {
+        "type": -1,
+        "num": ""
+      }
+    }
+  ],
+  "agreementShow":0
+}'>
+</form>
+<div id="app"></div>
+<div id = "dataBox">
+  <div id="submitType"></div>
+  <span class="tongy">我同意并遵守</span>
+  <span class="observeContent urlBtn" page-url="devDoc.html?Protocol_1">《江苏移动通信能力产品分销管理平台短信能力服务条款》</span>
+</div>
+<div id="submit" class="submit">下一步</div>
+</body>
+<script src="../dist/manifest.js"></script>
+<script src="../dist/vendors.js"></script>
+<script src="../dist/componentUI.js"></script>
+<script src="../dist/orderChooseList.js"></script>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>新增能力套餐</title>
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="../lib/html5shiv.min.js"></script>
+    <script src="../lib/html5shiv-printshiv.min.js"></script>
+    <script src="../lib/es5-shim.min.js"></script>
+    <script src="../lib/es5-sham.min.js"></script>
+    <script src="../lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form action="aaa" method="post" id="productPackage">
+    <input type="hidden" name="token" value="aaaaaaaaa"/>
+    <input type="hidden" id="key" name="后台参数名1" value=""/>
+    <input type="hidden" id="packageData" name="后台参数名2" value='
+    {
+      "type": 1,
+      "eaPriceId": "170687657154",
+      "eaPriceName": "能力套餐名称22",
+      "eaName": {
+        "v": 1,
+        "a": [
+          {
+            "t": "模板短信",
+            "v": 0
+          },
+          {
+            "t": "双向语音",
+            "v": 1
+          },
+          {
+            "t": "短信验证码",
+            "v": 2
+          },
+          {
+            "t": "语音验证码",
+            "v": 3
+          },
+          {
+            "t": "语音通知",
+            "v": 4
+          },
+          {
+            "t": "多方语音",
+            "v": 5
+          },
+          {
+            "t": "流量包前向",
+            "v": 8
+          },
+          {
+            "t": "流量包后向",
+            "v": 9
+          },
+          {
+            "t": "无线QoS",
+            "v": 10
+          }
+        ]
+      },
+      "feeTypes": {
+        "v": 1,
+        "a": [
+          {
+            "t": "套餐包",
+            "v": 0
+          },
+          {
+            "t": "按量",
+            "v": 1
+          },
+          {
+            "t": "按阶梯",
+            "v": 2
+          }
+        ]
+      },
+      "feeModes": {
+        "v": 1,
+        "a": [
+          {
+            "t": "按时长（60秒计费）",
+            "v": 0
+          },
+          {
+            "t": "按时长（6秒计费）",
+            "v": 1
+          },
+          {
+            "t": "按条",
+            "v": 2
+          },
+          {
+            "t": "按人月",
+            "v": 3
+          },
+          {
+            "t": "按次",
+            "v": 4
+          },
+          {
+            "t": "按M",
+            "v": 5
+          },
+          {
+            "t": "按天",
+            "v": 6
+          },
+          {
+            "t": "按元",
+            "v": 7
+          },
+          {
+            "t": "按G",
+            "v": 8
+          }
+        ]
+      },
+      "productId": "774938",
+      "validTime": {
+        "value": 2699,
+        "unit": {
+          "v": 1,
+          "a": [
+            {
+              "t": "小时",
+              "v": 0
+            },
+            {
+              "t": "天",
+              "v": 1
+            }
+          ]
+        }
+      },
+      "price": 888888,
+      "amount": 1,
+      "ladderPrice": [
+        {
+            "amount": 12,
+            "price": 100
+        },
+        {
+            "amount":22,
+            "price": 80
+        }
+      ],
+      "userSource": [
+        {
+          "check": 0,
+          "text": "线上用户",
+          "value": "线上用户"
+        },
+        {
+          "check": 0,
+          "text": "ESOP用户",
+          "value": "ESOP用户"
+        },
+        {
+          "check": 0,
+          "text": "BBOSS用户",
+          "value": "BBOSS用户"
+        },
+        {
+          "check": 0,
+          "text": "创客马拉松大赛用户",
+          "value": "创客马拉松大赛用户"
+        },
+        {
+          "check": 0,
+          "text": "自主开发大赛用户",
+          "value": "自主开发大赛用户"
+        }
+      ],
+      "userLevel": [
+        {
+          "check": 0,
+          "text": "初级",
+          "value": "初级"
+        },
+        {
+          "check": 0,
+          "text": "中级",
+          "value": "中级"
+        },
+        {
+          "check": 0,
+          "text": "高级",
+          "value": "高级"
+        }
+      ],
+      "isVisible": 0,
+      "describe": "描述"
+    }
+    '>
+</form>
+<div id="app"></div>
+</body>
+<script>
+    var productPackagePageData = {
+        eaPriceName:{
+            maxLength:120,
+            placeholder:"不超过120个汉字",
+            actionUrl:""
+        },
+        feeModes:{
+            listRule:[
+                {eaName:0,result:[2]},
+                {eaName:1,result:[0,1,2]},
+                {eaName:2,result:[2]},
+                {eaName:3,result:[2]},
+                {eaName:4,result:[0,1]},
+                {eaName:5,result:[0]},
+                {eaName:8,result:[5]},
+                {eaName:9,result:[7]},
+                {eaName:10,result:[3,4]}
+            ]
+        },
+        productId:{
+            maxLength:10,
+            placeholder:"请填写产品ID",
+            showRule:[{eaName:8,result:true}]
+        },
+        amount:{
+            maxLength:9,
+            maxValue:999999999,
+            placeholder:"请填写套餐包总量",
+            showRule:[{feeTypes:0,result:true}],
+            unitRule:[
+                {feeTypes:0,feeModes:0,result:"分钟"},
+                {feeTypes:0,feeModes:1,result:"分钟"},
+                {feeTypes:0,feeModes:2,result:"条"},
+                {feeTypes:0,feeModes:3,result:"人月"},
+                {feeTypes:0,feeModes:4,result:"次"},
+                {feeTypes:0,feeModes:5,result:"M"},
+                {feeTypes:0,feeModes:6,result:"天"},
+                {feeTypes:0,feeModes:7,result:"元"},
+                {feeTypes:0,feeModes:8,result:"G"}
+            ]
+        },
+        price:{
+            maxLength:15,
+            maxValue:999999999.99,
+            placeholder:"请填写套餐包的价格",
+            showRule:[{feeTypes:0,result:true},{feeTypes:1,result:true}],
+            unitRule:[
+                {feeTypes:0,feeModes:0,result:"分钟"},
+                {feeTypes:0,feeModes:1,result:"分钟"},
+                {feeTypes:0,feeModes:2,result:"条"},
+                {feeTypes:0,feeModes:3,result:"人月"},
+                {feeTypes:0,feeModes:4,result:"次"},
+                {feeTypes:0,feeModes:5,result:"M"},
+                {feeTypes:0,feeModes:6,result:"天"},
+                {feeTypes:0,feeModes:7,result:"元"},
+                {feeTypes:0,feeModes:8,result:"G"},
+                {feeTypes:1,feeModes:0,result:"元/分钟"},
+                {feeTypes:1,feeModes:1,result:"元/分钟"},
+                {feeTypes:1,feeModes:2,result:"元/条"},
+                {feeTypes:1,feeModes:3,result:"元/人月"},
+                {feeTypes:1,feeModes:4,result:"元/次"},
+                {feeTypes:1,feeModes:5,result:"元/M"},
+                {feeTypes:1,feeModes:6,result:"元/天"},
+                {feeTypes:1,feeModes:7,result:"元"},
+                {feeTypes:1,feeModes:8,result:"元/G"}
+            ]
+        },
+        validTime:{
+            maxLength:4,
+            maxValue:9999,
+            placeholder:"",
+            underTips:"请输入1-9999的正整数，或填写永久",
+            unit:{
+                showRule:[{value:"永久",result:false}]
+            }
+        },
+        ladderPrice:{
+            maxItem:4,
+            showRule:[{feeTypes:2,result:true}],
+            unitRule:[
+                {feeTypes:1,feeModes:0,result:"元/分钟"},
+                {feeTypes:1,feeModes:1,result:"元/分钟"},
+                {feeTypes:1,feeModes:2,result:"元/条"},
+                {feeTypes:1,feeModes:3,result:"元/人月"},
+                {feeTypes:1,feeModes:4,result:"元/次"},
+                {feeTypes:1,feeModes:5,result:"元/M"},
+                {feeTypes:1,feeModes:6,result:"元/天"},
+                {feeTypes:1,feeModes:7,result:"元"},
+                {feeTypes:1,feeModes:8,result:"元/G"},
+                {feeTypes:2,feeModes:0,result:"元/分钟"},
+                {feeTypes:2,feeModes:1,result:"元/分钟"},
+                {feeTypes:2,feeModes:2,result:"元/条"},
+                {feeTypes:2,feeModes:3,result:"元/人月"},
+                {feeTypes:2,feeModes:4,result:"元/次"},
+                {feeTypes:2,feeModes:5,result:"元/M"},
+                {feeTypes:2,feeModes:6,result:"元/天"},
+                {feeTypes:2,feeModes:7,result:"元"},
+                {feeTypes:2,feeModes:8,result:"元/G"}
+            ],
+            amount:{
+                maxLength:9,
+                maxValue:999999999,
+                placeholder:"请输入阶梯分界数"
+            },
+            price:{
+                maxLength:15,
+                maxValue:999999999.99,
+                placeholder:"请输入阶梯单价"
+            }
+        },
+        describe:{
+            maxLength:256,
+            placeholder:"内容描述不超过256个字符"
+        }
+    }
+</script>
+<script src="../dist/manifest.js"></script>
+<script src="../dist/vendors.js"></script>
+<script src="../dist/productPackageWebpack.js"></script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>确认订单</title>
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="../lib/html5shiv.min.js"></script>
+    <script src="../lib/html5shiv-printshiv.min.js"></script>
+    <script src="../lib/es5-shim.min.js"></script>
+    <script src="../lib/es5-sham.min.js"></script>
+    <script src="../lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<form action="aaa" method="post" id="orderForPay">
+<!--    <input type="hidden" name="token" value="aaaaaaaaa"/>-->
+    <input type="hidden" id="key" name="后台参数名1" value=""/>
+    <input type="hidden" id="payListData" name="后台参数名2" value='{
+      "amount": 46,
+      "bounty": {
+        "isUse": 1,
+        "amount": 50,
+        "check": 0
+      },
+      "payList": [
+        {
+          "accountId": "630467346247",
+          "type": 0,
+          "text": "账户余额",
+          "amount": 8,
+          "credit": 18,
+          "check": 0
+        },
+        {
+          "accountId": "819057391555",
+          "type": 1,
+          "text": "第三方支付",
+          "check": 0
+        },
+        {
+          "accountId": "333109246019",
+          "type": 2,
+          "text": "集团账户",
+          "amount": 0,
+          "credit": 19,
+          "check": 0
+        },
+        {
+          "accountId": "361682374476",
+          "type": 4,
+          "text": "B2B支付",
+          "check": 0
+        }
+      ]
+    }'>
+</form>
+<div id="unPayTips">
+    <div class="otherUnPay">余额不足，请先<span class="urlBtn" page-url="workbenchNew.html" subframe-url="recharge_final.html">充值</span></div>
+</div>
+<div id="app"></div>
+
+</body>
+<script src="../dist/manifest.js"></script>
+<script src="../dist/vendors.js"></script>
+<script src="../dist/orderForPayList.js"></script>
+</html>

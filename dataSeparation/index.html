@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>数据分离</title>
+    <link rel="icon" href="img/cmcc.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/cmcc.ico" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/sprite.css" rel="stylesheet"/>
+<!--    <link href="css/app.css" rel="stylesheet"/>-->
+    <script src="lib/Barrett.js"></script>
+    <script src="lib/BigInt.js"></script>
+    <script src="lib/RSA_Stripped.js"></script>
+    <!--[if lt IE 9]>
+    <script>
+        (function(){
+            var ef = function(){};
+            window.console = window.console || {log:ef,warn:ef,error:ef,dir:ef};
+        }());
+    </script>
+    <script src="lib/html5shiv.min.js"></script>
+    <script src="lib/html5shiv-printshiv.min.js"></script>
+    <script src="lib/es5-shim.min.js"></script>
+    <script src="lib/es5-sham.min.js"></script>
+    <script src="lib/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        window.GLOBAL = {
+            pageData:{
+                systemError:{
+                    "2000":{text:"数据请求异常，请稍后重试",key:"center"}
+                },
+                header:{
+                    logo:{
+                        img:"img/heLiYun.png",
+                        text:""
+                    },
+                    centerMenu:{
+                        devDoc:{
+                            text:"开发者文档",
+                            child:[
+                                {text:"开发者指南",key:"companion",url:"/companion"},
+                                {text:"REST API",key:"restAPI",url:"/restAPI?d="+encodeURIComponent("html/00001.html")},
+                                {text:"服务协议",key:"agreement",url:"/agreement"},
+                                {text:"常见问题",key:"FQA",url:"/FQA"}
+                            ]
+                        },
+                        ability:{
+                            text:"能力服务",
+                            child:[
+                                {
+                                    text:"短信服务",
+                                    child:[
+                                        {text:"短信模板",key:"smsTemplateDome",url:"/introduction/00001"},
+                                        {text:"短信验证码",key:"verificationCodeDome",url:"/introduction/00002"}
+                                    ]
+                                },
+                                {
+                                    text:"语音通信",
+                                    child:[
+                                        {text:"语音通知",key:"phoneSoundDome",url:"/introduction/00003"},
+                                        {text:"双向语音",key:"voiceNotificationDome",url:"/introduction/00004"},
+                                        {text:"语音验证码",key:"verificationCodeDome",url:"/introduction/00005"},
+                                        {text:"多方语音会议",key:"manyVoiceConferenceDome",url:"/introduction/00006"}
+                                    ]
+                                },
+                                {
+                                    text:"流量服务",
+                                    child:[
+                                        {text:"流量充值",key:"flowDome",url:"/introduction/00007"},
+                                        {text:"QOS",key:"qosDome",url:"/introduction/00008"}
+                                    ]
+                                }
+                            ]
+                        },
+                        workBench:{
+                            text:"我的工作台",
+                            url:"/workBench"
+                        },
+                        index:{
+                            text:"首页",
+                            url:"/index"
+                        },
+                        loginNav:["index","workBench","ability","devDoc"],
+                        unLoginNav:["index","ability","devDoc"]
+                    },
+                    rightMenu:{
+                        userName:{
+                            beforeTips:'欢迎您，',
+                            action:"http://172.18.34.166:8415/mock/dataApi/logout"
+                        },
+                        email:{
+                            url:"/workBench/emailList",
+                            action:"http://172.18.34.166:8415/mock/dataApi/getUnReadMail"
+                        },
+                        unLoginBtns:[
+                            {
+                                text:"登录",
+                                key:"btn btn-primary",
+                                url:"/login"
+                            },
+                            {
+                                text:"注册",
+                                key:"btn btn-info",
+                                url:"/registration"
+                            }
+                        ]
+                    },
+                    action:"http://172.18.34.166:8415/mock/dataApi/getUserLogInfo"
+                },
+                footer:{
+                    leftItems:[
+                        {text:"公司简介",url:"/about"},
+                        {text:"联系我们",url:"/about"},
+                        {text:"杭研开平签[2015]4号  中国移动通信版权所有 ",url:""}
+                    ],
+                    rightItems:[
+                        {img:"img/ghs.png",text:"苏ICP备 11070397号-48",url:""}
+                    ]
+                },
+                login:{
+                    userName:{
+                        maxLength:50,
+                        placeholder:"用户名/邮箱/手机号码"
+                    },
+                    password:{
+                        maxLength:20,
+                        placeholder:"密码"
+                    },
+                    smsCode:{
+                        maxLength:6,
+                        placeholder:"输入短信验证码"
+                    },
+                    smsSentBtn:{
+                        text:"短信获取验证码",
+                        times:60,
+                        action:"http://172.18.34.166:8415/mock/dataApi/sentSmsCode",
+                        result:[
+                            {apiCode:"200",type:0,key:"smsCodeTips",text:"* 验证码下发成功"},
+                            {apiCode:"201",type:0,key:"smsCodeTips",text:"* 您今天发送短信验证码已超过三次，请明天再试。"},
+                            {apiCode:"202",type:0,key:"smsCodeTips",text:"* 您今天发送短信验证码已超过三次，请明天再试。"},
+                            {apiCode:"203",type:0,key:"smsCodeTips",text:"* 验证码下发失败"},
+                            {apiCode:"400",type:0,key:"useNameTips",text:"* 请输入正确格式的用户名/邮箱/手机号码"}
+                        ]
+                    },
+                    imgCode:{
+                        maxLength:4,
+                        placeholder:"输入图形验证码",
+                        action:"img/imgTest.png"
+                    },
+                    submit:{
+                        action:"http://172.18.34.166:8415/mock/dataApi/postLogin",
+                        result:[
+                            {apiCode:"201",type:0,key:"useNameTips",text:"* 用户名/邮箱/手机号码不能为空"},
+                            {apiCode:"202",type:0,key:"passwordTips",text:"* 密码不能为空"},
+                            {apiCode:"203",type:0,key:"smsCodeTips",text:"* 请输入正确的短信验证码"},
+                            {apiCode:"400",type:0,key:"useNameTips",text:"* 用户名或密码错误"},
+                            {apiCode:"400",type:0,key:"passwordTips",text:"* 用户名或密码错误"},
+                            {apiCode:"410",type:0,key:"passwordTips",text:"* 请输入正确的图形验证码"}
+                        ]
+                    },
+                    status:{
+                        result:[
+                            {apiCode:2,type:-1,key:"left",text:"用户名或者密码不正确，您还有1次尝试机会"},
+                            {apiCode:3,type:-1,key:"left",text:"登录用户名和密码已锁定，12个小时后恢复正常，或您可以选择“忘记密码”立即解锁。"}
+                        ]
+                    }
+                },
+                about:{
+                    profile:"中国移动通信集团江苏有限公司（简称中国移动江苏公司）隶属于中国移动通信集团公司，是中国移动有限公司在江苏设立的全资子公司 ，是江苏省内规模最大、效益最好、发展最快的通信运营商。中国移动江苏公司将围绕“移动改变生活”战略愿景，以创新型企业建设为主线，以移动互联网、物联网为方向，紧扣客户需求，转变发展机制，努力提升客户价值，积极服务国民经济与社会信息化，加快可持续发展步伐。",
+                    contact:"公司地址： 南京市虎踞路59号<br/>联系电话： yunheliservice@js.chinamobie.com<br/>客服邮箱： 10086"
+                },
+                workBench:{
+                    leftMenu:{
+                        active:"myServer",
+                        action:"http://172.18.34.166:8415/mock/dataApi/workbenchLeftMenu",
+                        unPayOrderAction:"http://172.18.34.166:8415/mock/dataApi/getUnPayOrderNum",
+                        menu:{
+                            myServer:{
+                                title:"我的能力",
+                                url:"/workBench/myServer"
+                            },
+                            myApps:{
+                                title:"我的应用",
+                                url:"/workBench/myApps"
+                            },
+                            testPhone:{
+                                title:"测试号码",
+                                url:"/workBench/testPhone"
+                            },
+                            smsSignature:{
+                                title:"短信签名",
+                                url:"/workBench/smsSignature"
+                            },
+                            smsTemplate:{
+                                title:"短信模板",
+                                url:"/workBench/smsTemplate"
+                            },
+                            voiceTemplate:{
+                                title:"语音模板",
+                                url:"/workBench/smsTemplate"
+                            },
+                            phoneNum:{
+                                title:"号码管理",
+                                url:"/workBench/phoneNum"
+                            },
+                            statistics:{
+                                title:"能力统计",
+                                url:"/workBench/statistics"
+                            },
+                            myAccount:{
+                                title:"我的账户",
+                                url:"/workBench/myAccount"
+                            },
+                            flowRecord:{
+                                title:"流量前向交易",
+                                url:"/workBench/flowRecord"
+                            },
+                            recharge:{
+                                title:"充值",
+                                url:"/workBench/recharge"
+                            },
+                            orderManage:{
+                                title:"订单管理",
+                                url:"/workBench/orderManage"
+                            },
+                            accountManage:{
+                                title:"账号管理",
+                                url:"/workBench/accountManage"
+                            },
+                            changePwd:{
+                                title:"密码更改",
+                                url:"/workBench/changePwd"
+                            },
+                            emailList:{
+                                title:"站内消息",
+                                url:"/workBench/emailList"
+                            },
+                            auth:{
+                                title:"认证信息",
+                                url:"/workBench/auth"
+                            }
+                        }
+                    },
+                    myServer:{
+                        leftMenuIndex:0,
+                        title:"统计数据",
+                        userInfo:{
+                            userImg:"img/user.gif",
+                            countList:[
+                                {icon:"",text:"账户余额",unit:"元"},
+                                {icon:"",text:"累计发送量",unit:"次"},
+                                {icon:"",text:"累计呼叫时长",unit:"分"}
+                            ]
+                        },
+                        phoneInfo:{
+                            title:"码号管理",
+                            formal:{
+                                title:"正式码号：",
+                                sms:{key:"",text:"短信客户代码："},
+                                voice1:{key:"",text:"语音通知、语音验证码码号："},
+                                voice2:{key:"",text:"双向语音呼叫、多方语音会议码号："}
+                            },
+                            test:{
+                                title:"试用码号：",
+                                sms:{key:"",text:"短信客户代码："},
+                                voice1:{key:"",text:"语音通知、语音验证码码号："},
+                                voice2:{key:"",text:"双向语音呼叫、多方语音会议码号："}
+                            }
+                        },
+                        serverInfo:{
+                            title:"能力管理",
+                            selects:[
+                                {value:[0,1,2,3],text:"全部"},
+                                {value:[1],text:"正在试用"},
+                                {value:[2],text:"开通成功"}
+                            ],
+                            type:[
+                                {value:0,text:""},
+                                {value:1,text:"正在试用"},
+                                {value:2,text:"开通成功"},
+                                {value:3,text:"冻结"}
+                            ],
+                            keyWord:{
+                                myApps:{url:"/myApps",text:"我的应用"},
+                                testPhone:{url:"/testPhone",test:"测试号码"}
+                            }
+                        }
+                    },
+                    myApps:{
+                        leftMenuIndex:0
+                    },
+                    testPhone:{
+                        leftMenuIndex:0
+                    },
+                    smsSignature:{
+                        leftMenuIndex:0
+                    },
+                    smsTemplate:{
+                        leftMenuIndex:0
+                    },
+                    voiceTemplate:{
+                        leftMenuIndex:0
+                    },
+                    phoneNum:{
+                        leftMenuIndex:1
+                    },
+                    statistics:{
+                        leftMenuIndex:2
+                    },
+                    myAccount:{
+                        leftMenuIndex:3
+                    },
+                    flowRecord:{
+                        leftMenuIndex:3
+                    },
+                    recharge:{
+                        leftMenuIndex:3
+                    },
+                    orderManage:{
+                        leftMenuIndex:3
+                    },
+                    accountManage:{
+                        title:"账号管理",
+                        url:"/workBench/accountManage"
+                    },
+                    changePwd:{
+                        title:"密码更改",
+                        url:"/workBench/changePwd"
+                    },
+                    emailList:{
+                        title:"站内消息",
+                        url:"/emailList"
+                    },
+                    auth:{
+                        title:"认证信息",
+                        url:"/workBench/auth"
+                    }
+                }
+            },
+            token:"0000001",
+            uploadToken:"1000001",
+            key:"be623b6a0ae1e08a81d73700e7ae31b67b1f77bdb53fcf8bca298b7e79d61ec7f986c6dae3baed0431adffcc916c547279b2d7656d7525ba121e9b26e76f5ca812a2976126e5f835ce2a11cb94251c5a8274dcfc8597fad616e72a366bac64bd6165b0fbea478e8a14ef819f755a8260ea641bcb8134f7f1278dfc9b5cc6d1dd",
+            userId:"",
+            isLogin:0,
+            userInfo:{},
+            timer:{},
+            systemTips:{
+                timeOut:2000
+            }
+        };
+    </script>
+<!--    <link rel="stylesheet" type="text/css" href="css/app.css">-->
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="dist/manifest.js"></script>
+<script src="dist/vendors.js"></script>
+<script src="dist/config.js"></script>
+<script src="dist/componentUI.js"></script>
+<script src="dist/app.js"></script>
+</html>

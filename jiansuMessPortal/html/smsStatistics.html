@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>短信发送监控</title>
+</head>
+<body>
+<div  class="mainBox commodityManageAdd">
+    <!--新增时展现-->
+    <div class="title">短信发送监控</div>
+    <div class="inputLine fl">
+        <div style="display: none" class="searchInputUI_tab" Fun-key="searchInput">
+            {"v":"","a":[{"t":"abac","v":"a"},{"t":"bbb","v":"b"},{"t":"ccc","v":"c"},{"t":"ccdac","v":"cda"}],"errorTips":"* 输入内容错误","id":"aaa"}
+        </div>
+    </div>
+    <input type="hidden">
+</div>
+<script>
+    window.Fun = {};
+    window.Fun.searchInput = {
+        key:"returnValue",
+        fun:function(_obj){
+            if(_obj.state.isRight){
+                console.log(111111111);
+            }
+        }
+    }
+</script>
+<script src="../dist/manifest.js"></script>
+<script src="../dist/vendors.js"></script>
+<script src="../dist/componentUI.js"></script>
+<script src="../dist/bindUI.js"></script>
+</body>
+</html>

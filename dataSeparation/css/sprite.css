@@ -1,0 +1,636 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-3er {
+  background-image: url(../img/sprite.png);
+  background-position: -373px -300px;
+  width: 46px;
+  height: 31px;
+}
+.icon-45ceff {
+  background-image: url(../img/sprite.png);
+  background-position: -200px -197px;
+  width: 51px;
+  height: 39px;
+}
+.icon-4cdvr {
+  background-image: url(../img/sprite.png);
+  background-position: -100px -337px;
+  width: 100px;
+  height: 100px;
+}
+.icon-4dde {
+  background-image: url(../img/sprite.png);
+  background-position: -200px -437px;
+  width: 100px;
+  height: 100px;
+}
+.icon-4f4cd {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -627px;
+  width: 45px;
+  height: 39px;
+}
+.icon-DOC {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -174px;
+  width: 36px;
+  height: 44px;
+}
+.icon-DOME {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -666px;
+  width: 36px;
+  height: 44px;
+}
+.icon-SDK {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -218px;
+  width: 36px;
+  height: 44px;
+}
+.icon-accounGreen {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -352px;
+  width: 34px;
+  height: 28px;
+}
+.icon-accountGray {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -324px;
+  width: 34px;
+  height: 28px;
+}
+.icon-addfriend {
+  background-image: url(../img/sprite.png);
+  background-position: -273px -100px;
+  width: 100px;
+  height: 100px;
+}
+.icon-amsd {
+  background-image: url(../img/sprite.png);
+  background-position: -94px -604px;
+  width: 51px;
+  height: 47px;
+}
+.icon-android {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -244px;
+  width: 70px;
+  height: 72px;
+}
+.icon-arrow {
+  background-image: url(../img/sprite.png);
+  background-position: -756px -206px;
+  width: 7px;
+  height: 10px;
+}
+.icon-arrowLeft {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -380px;
+  width: 22px;
+  height: 38px;
+}
+.icon-arrowRight {
+  background-image: url(../img/sprite.png);
+  background-position: -695px -380px;
+  width: 22px;
+  height: 38px;
+}
+.icon-b2bGray {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -294px;
+  width: 34px;
+  height: 30px;
+}
+.icon-b2bGreen {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -262px;
+  width: 36px;
+  height: 32px;
+}
+.icon-bangCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -300px -237px;
+  width: 60px;
+  height: 60px;
+}
+.icon-bangCircleSmall {
+  background-image: url(../img/sprite.png);
+  background-position: -500px -437px;
+  width: 43px;
+  height: 70px;
+}
+.icon-bankC {
+  background-image: url(../img/sprite.png);
+  background-position: -300px -337px;
+  width: 100px;
+  height: 100px;
+}
+.icon-books {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -156px;
+  width: 45px;
+  height: 50px;
+}
+.icon-callCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -537px;
+  width: 74px;
+  height: 67px;
+}
+.icon-callDurationMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -256px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-car {
+  background-image: url(../img/sprite.png);
+  background-position: -473px -300px;
+  width: 100px;
+  height: 100px;
+}
+.icon-cheep {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -437px;
+  width: 100px;
+  height: 100px;
+}
+.icon-click {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -59px;
+  width: 45px;
+  height: 59px;
+}
+.icon-clockCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -148px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-crying {
+  background-image: url(../img/sprite.png);
+  background-position: -137px 0px;
+  width: 136px;
+  height: 136px;
+}
+.icon-cxts {
+  background-image: url(../img/sprite.png);
+  background-position: -400px -437px;
+  width: 100px;
+  height: 100px;
+}
+.icon-dd3d4 {
+  background-image: url(../img/sprite.png);
+  background-position: -573px 0px;
+  width: 100px;
+  height: 100px;
+}
+.icon-ded4 {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -500px;
+  width: 45px;
+  height: 42px;
+}
+.icon-der4 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -663px;
+  width: 48px;
+  height: 48px;
+}
+.icon-dvssf {
+  background-image: url(../img/sprite.png);
+  background-position: -473px 0px;
+  width: 100px;
+  height: 100px;
+}
+.icon-eded4 {
+  background-image: url(../img/sprite.png);
+  background-position: -200px -337px;
+  width: 100px;
+  height: 100px;
+}
+.icon-eef44 {
+  background-image: url(../img/sprite.png);
+  background-position: -718px 0px;
+  width: 46px;
+  height: 50px;
+}
+.icon-ef4c {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -337px;
+  width: 100px;
+  height: 100px;
+}
+.icon-efvf {
+  background-image: url(../img/sprite.png);
+  background-position: -96px -663px;
+  width: 48px;
+  height: 48px;
+}
+.icon-emailCircle {
+  background-image: url(../img/sprite.png);
+  background-position: -400px -337px;
+  width: 55px;
+  height: 55px;
+}
+.icon-emailCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -418px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-emailCircleSend {
+  background-image: url(../img/sprite.png);
+  background-position: -472px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-emailGraySmall {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -465px;
+  width: 29px;
+  height: 21px;
+}
+.icon-emailReaded {
+  background-image: url(../img/sprite.png);
+  background-position: -691px -568px;
+  width: 18px;
+  height: 14px;
+}
+.icon-emailUnRead {
+  background-image: url(../img/sprite.png);
+  background-position: -685px -584px;
+  width: 18px;
+  height: 14px;
+}
+.icon-etrt {
+  background-image: url(../img/sprite.png);
+  background-position: -200px -237px;
+  width: 100px;
+  height: 100px;
+}
+.icon-eye {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -532px;
+  width: 20px;
+  height: 20px;
+}
+.icon-eyeClose {
+  background-image: url(../img/sprite.png);
+  background-position: -696px -509px;
+  width: 20px;
+  height: 20px;
+}
+.icon-f4f4 {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -450px;
+  width: 38px;
+  height: 50px;
+}
+.icon-f4f43 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -237px;
+  width: 100px;
+  height: 100px;
+}
+.icon-f4rsd {
+  background-image: url(../img/sprite.png);
+  background-position: -100px -137px;
+  width: 100px;
+  height: 100px;
+}
+.icon-flow3 {
+  background-image: url(../img/sprite.png);
+  background-position: -673px 0px;
+  width: 45px;
+  height: 59px;
+}
+.icon-flow4 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -604px;
+  width: 46px;
+  height: 59px;
+}
+.icon-flowLastStatistics0 {
+  background-image: url(../img/sprite.png);
+  background-position: -364px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-flowLastStatistics1 {
+  background-image: url(../img/sprite.png);
+  background-position: -202px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-flowLastStatistics2 {
+  background-image: url(../img/sprite.png);
+  background-position: -526px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-fwfr4 {
+  background-image: url(../img/sprite.png);
+  background-position: -373px -200px;
+  width: 100px;
+  height: 100px;
+}
+.icon-gew {
+  background-image: url(../img/sprite.png);
+  background-position: -580px -537px;
+  width: 52px;
+  height: 52px;
+}
+.icon-ghs {
+  background-image: url(../img/sprite.png);
+  background-position: -696px -486px;
+  width: 20px;
+  height: 20px;
+}
+.icon-h5 {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -388px;
+  width: 70px;
+  height: 72px;
+}
+.icon-help {
+  background-image: url(../img/sprite.png);
+  background-position: -702px -465px;
+  width: 16px;
+  height: 16px;
+}
+.icon-helpGray {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -552px;
+  width: 18px;
+  height: 16px;
+}
+.icon-helpGreen {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -568px;
+  width: 18px;
+  height: 16px;
+}
+.icon-helpWhite {
+  background-image: url(../img/sprite.png);
+  background-position: -691px -552px;
+  width: 18px;
+  height: 16px;
+}
+.icon-i {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -137px;
+  width: 100px;
+  height: 100px;
+}
+.icon-ios {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -172px;
+  width: 70px;
+  height: 72px;
+}
+.icon-java {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -100px;
+  width: 70px;
+  height: 72px;
+}
+.icon-kinj {
+  background-image: url(../img/sprite.png);
+  background-position: -300px -437px;
+  width: 100px;
+  height: 100px;
+}
+.icon-lock {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -308px;
+  width: 40px;
+  height: 50px;
+}
+.icon-loginBottom {
+  background-image: url(../img/sprite.png);
+  background-position: -759px -50px;
+  width: 1px;
+  height: 47px;
+}
+.icon-logo_CMCC {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -585px;
+  width: 42px;
+  height: 42px;
+}
+.icon-lsts {
+  background-image: url(../img/sprite.png);
+  background-position: -400px -392px;
+  width: 57px;
+  height: 41px;
+}
+.icon-moneyCircleBig {
+  background-image: url(../img/sprite.png);
+  background-position: -100px -437px;
+  width: 100px;
+  height: 100px;
+}
+.icon-moneyCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -74px -537px;
+  width: 74px;
+  height: 67px;
+}
+.icon-moreDown {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -584px;
+  width: 12px;
+  height: 21px;
+}
+.icon-moreUp {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -605px;
+  width: 12px;
+  height: 21px;
+}
+.icon-notbook {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -262px;
+  width: 46px;
+  height: 46px;
+}
+.icon-note {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -106px;
+  width: 45px;
+  height: 50px;
+}
+.icon-okCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -200px -137px;
+  width: 60px;
+  height: 60px;
+}
+.icon-payCircleBig {
+  background-image: url(../img/sprite.png);
+  background-position: -100px -237px;
+  width: 100px;
+  height: 100px;
+}
+.icon-payGray {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -442px;
+  width: 34px;
+  height: 23px;
+}
+.icon-payGreen {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -418px;
+  width: 34px;
+  height: 24px;
+}
+.icon-php {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -316px;
+  width: 70px;
+  height: 72px;
+}
+.icon-qos2 {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -206px;
+  width: 38px;
+  height: 56px;
+}
+.icon-qos3 {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -50px;
+  width: 41px;
+  height: 56px;
+}
+.icon-qos4 {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -118px;
+  width: 44px;
+  height: 56px;
+}
+.icon-qos5 {
+  background-image: url(../img/sprite.png);
+  background-position: -46px -604px;
+  width: 48px;
+  height: 56px;
+}
+.icon-qos6 {
+  background-image: url(../img/sprite.png);
+  background-position: -473px -100px;
+  width: 100px;
+  height: 100px;
+}
+.icon-qos7 {
+  background-image: url(../img/sprite.png);
+  background-position: -473px -200px;
+  width: 100px;
+  height: 100px;
+}
+.icon-rew4 {
+  background-image: url(../img/sprite.png);
+  background-position: -48px -663px;
+  width: 48px;
+  height: 48px;
+}
+.icon-selectLeftTop {
+  background-image: url(../img/sprite.png);
+  background-position: -693px -532px;
+  width: 21px;
+  height: 19px;
+}
+.icon-sendCircleMiddle {
+  background-image: url(../img/sprite.png);
+  background-position: -573px -460px;
+  width: 74px;
+  height: 67px;
+}
+.icon-smiling {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 137px;
+  height: 137px;
+}
+.icon-spts {
+  background-image: url(../img/sprite.png);
+  background-position: -373px -100px;
+  width: 100px;
+  height: 100px;
+}
+.icon-take {
+  background-image: url(../img/sprite.png);
+  background-position: -373px 0px;
+  width: 100px;
+  height: 100px;
+}
+.icon-throughCallCircle {
+  background-image: url(../img/sprite.png);
+  background-position: -310px -537px;
+  width: 54px;
+  height: 54px;
+}
+.icon-tipsBg {
+  background-image: url(../img/sprite.png);
+  background-position: -754px -666px;
+  width: 10px;
+  height: 10px;
+}
+.icon-tipsIcon {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -542px;
+  width: 42px;
+  height: 43px;
+}
+.icon-tvsw {
+  background-image: url(../img/sprite.png);
+  background-position: -273px 0px;
+  width: 100px;
+  height: 100px;
+}
+.icon-weer {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -358px;
+  width: 41px;
+  height: 48px;
+}
+.icon-weibo {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -509px;
+  width: 23px;
+  height: 23px;
+}
+.icon-weixin {
+  background-image: url(../img/sprite.png);
+  background-position: -673px -486px;
+  width: 23px;
+  height: 23px;
+}
+.icon-wre {
+  background-image: url(../img/sprite.png);
+  background-position: -473px -400px;
+  width: 55px;
+  height: 37px;
+}
+.icon-ww3d {
+  background-image: url(../img/sprite.png);
+  background-position: -718px -406px;
+  width: 44px;
+  height: 44px;
+}
